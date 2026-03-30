@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>🌌 弹力球：星际乐章 V3</title>
+<title>🌌 Bouncy Ball: Stellar Symphony V3</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;user-select:none;-webkit-user-select:none}
 :root{--glass:rgba(12,12,35,0.72);--gborder:rgba(255,255,255,0.08);--ghover:rgba(255,255,255,0.13);--accent:#a78bfa;--accent2:#f472b6;--accent3:#38bdf8;--gold:#fbbf24;--ngreen:#34d399;--nred:#f87171;--text:rgba(255,255,255,0.88);--dim:rgba(255,255,255,0.38)}
@@ -98,46 +98,46 @@ canvas{display:block;position:fixed;top:0;left:0;z-index:1}
 </div>
 
 <div class="pstatus" id="pstat">
- <div class="pstep cur" id="ps1">🟣 点击放置 <b>入口</b></div>
+ <div class="pstep cur" id="ps1">🟣 Click to place <b>Entrance</b></div>
  <div class="parr">→</div>
- <div class="pstep wait" id="ps2">🔵 点击放置 <b>出口</b></div>
+ <div class="pstep wait" id="ps2">🔵 Click to place <b>Exit</b></div>
 </div>
 
 <div class="toolbar" id="tbar">
- <div class="tbtn active" data-t="launch">🏹<span class="tp">弹弓发射<em>拖拽蓄力释放</em></span></div>
- <div class="tbtn" data-t="gravity">🌀<span class="tp">引力场<em>左键吸引 / 右键排斥</em></span></div>
- <div class="tbtn" data-t="portal">🔮<span class="tp">传送门<em>依次点击入口→出口</em></span></div>
- <div class="tbtn" data-t="wall">✏️<span class="tp">画墙壁<em>拖拽绘制反弹墙</em></span></div>
+ <div class="tbtn active" data-t="launch">🏹<span class="tp">Slingshot Launch<em>Drag to charge & release</em></span></div>
+ <div class="tbtn" data-t="gravity">🌀<span class="tp">Gravity Field<em>Left click attract / Right click repel</em></span></div>
+ <div class="tbtn" data-t="portal">🔮<span class="tp">Portal<em>Click entrance → exit in order</em></span></div>
+ <div class="tbtn" data-t="wall">✏️<span class="tp">Draw Wall<em>Drag to draw bounce wall</em></span></div>
  <div class="tsep"></div>
- <div class="tbtn" data-t="mine">💣<span class="tp">炸弹雷<em>球触碰即爆炸</em></span></div>
- <div class="tbtn" data-t="spinner">🔄<span class="tp">旋转器<em>旋转弹飞球体</em></span></div>
- <div class="tbtn" data-t="wind">🌊<span class="tp">风场<em>拖拽定义风向</em></span></div>
- <div class="tbtn" data-t="target">🎯<span class="tp">得分区<em>球经过持续得分</em></span></div>
+ <div class="tbtn" data-t="mine">💣<span class="tp">Mine<em>Explodes on ball contact</em></span></div>
+ <div class="tbtn" data-t="spinner">🔄<span class="tp">Spinner<em>Spins and flings balls</em></span></div>
+ <div class="tbtn" data-t="wind">🌊<span class="tp">Wind Zone<em>Drag to define wind direction</em></span></div>
+ <div class="tbtn" data-t="target">🎯<span class="tp">Score Zone<em>Balls score while passing through</em></span></div>
  <div class="tsep"></div>
- <div class="tbtn" data-t="split">💥<span class="tp">裂变冲击<em>点击球 / 空白处</em></span></div>
- <div class="tbtn" data-t="erase">🧹<span class="tp">橡皮擦<em>拖拽擦除物体</em></span></div>
+ <div class="tbtn" data-t="split">💥<span class="tp">Fission Impact<em>Click ball / empty space</em></span></div>
+ <div class="tbtn" data-t="erase">🧹<span class="tp">Eraser<em>Drag to erase objects</em></span></div>
 </div>
 
 <div class="bpanel show" id="bp">
- <div class="bt active" data-b="normal" style="background:radial-gradient(circle at 30% 30%,#e0d4ff,#a78bfa,#7c3aed)"><span class="btp">✨ 普通球</span></div>
- <div class="bt" data-b="fire" style="background:radial-gradient(circle at 30% 30%,#fef08a,#f97316,#dc2626)"><span class="btp">🔥 火焰·碰撞裂变</span></div>
- <div class="bt" data-b="ice" style="background:radial-gradient(circle at 30% 30%,#e0f2fe,#38bdf8,#0284c7)"><span class="btp">❄️ 冰冻·减速场</span></div>
- <div class="bt" data-b="magnet" style="background:radial-gradient(circle at 30% 30%,#fce7f3,#f472b6,#be185d)"><span class="btp">🧲 磁力·吸引</span></div>
- <div class="bt" data-b="mega" style="background:radial-gradient(circle at 30% 30%,#fef9c3,#fbbf24,#d97706)"><span class="btp">⭐ 巨星·大质量</span></div>
- <div class="bt" data-b="ghost" style="background:radial-gradient(circle at 30% 30%,rgba(255,255,255,0.5),rgba(167,139,250,0.3),rgba(80,80,160,0.1));border-style:dashed"><span class="btp">👻 幽灵·穿墙</span></div>
- <div class="bt" data-b="rainbow" style="background:conic-gradient(#f87171,#fbbf24,#34d399,#38bdf8,#a78bfa,#f472b6,#f87171)"><span class="btp">🌈 彩虹·变色</span></div>
+ <div class="bt active" data-b="normal" style="background:radial-gradient(circle at 30% 30%,#e0d4ff,#a78bfa,#7c3aed)"><span class="btp">✨ Normal Ball</span></div>
+ <div class="bt" data-b="fire" style="background:radial-gradient(circle at 30% 30%,#fef08a,#f97316,#dc2626)"><span class="btp">🔥 Fire · Collision Fission</span></div>
+ <div class="bt" data-b="ice" style="background:radial-gradient(circle at 30% 30%,#e0f2fe,#38bdf8,#0284c7)"><span class="btp">❄️ Ice · Slow Field</span></div>
+ <div class="bt" data-b="magnet" style="background:radial-gradient(circle at 30% 30%,#fce7f3,#f472b6,#be185d)"><span class="btp">🧲 Magnet · Attract</span></div>
+ <div class="bt" data-b="mega" style="background:radial-gradient(circle at 30% 30%,#fef9c3,#fbbf24,#d97706)"><span class="btp">⭐ Mega · Heavy Mass</span></div>
+ <div class="bt" data-b="ghost" style="background:radial-gradient(circle at 30% 30%,rgba(255,255,255,0.5),rgba(167,139,250,0.3),rgba(80,80,160,0.1));border-style:dashed"><span class="btp">👻 Ghost · Phase Through</span></div>
+ <div class="bt" data-b="rainbow" style="background:conic-gradient(#f87171,#fbbf24,#34d399,#38bdf8,#a78bfa,#f472b6,#f87171)"><span class="btp">🌈 Rainbow · Color Shift</span></div>
 </div>
 
 <div class="rpanel">
- <div class="sbtn on" data-s="sound"><span class="stp">音效</span>🔊</div>
- <div class="sbtn on" data-s="trail"><span class="stp">拖尾</span>✨</div>
- <div class="sbtn on" data-s="glow"><span class="stp">辉光</span>💡</div>
- <div class="sbtn" data-s="gravity"><span class="stp">重力</span>⬇️</div>
- <div class="sbtn" data-s="chain"><span class="stp">闪电链</span>⚡</div>
- <div class="sbtn" data-s="clear"><span class="stp">清除全部</span>🗑️</div>
+ <div class="sbtn on" data-s="sound"><span class="stp">Sound</span>🔊</div>
+ <div class="sbtn on" data-s="trail"><span class="stp">Trail</span>✨</div>
+ <div class="sbtn on" data-s="glow"><span class="stp">Glow</span>💡</div>
+ <div class="sbtn" data-s="gravity"><span class="stp">Gravity</span>⬇️</div>
+ <div class="sbtn" data-s="chain"><span class="stp">Chain Lightning</span>⚡</div>
+ <div class="sbtn" data-s="clear"><span class="stp">Clear All</span>🗑️</div>
 </div>
 
-<div class="hint" id="hint">🏹 <b>拖拽</b>发射弹力球 ｜ <b>空格</b>慢动作 ｜ 手机<b>双击</b>慢动作 ｜ 选择左侧工具开始玩！</div>
+<div class="hint" id="hint">🏹 <b>Drag</b> to launch ball ｜ <b>Space</b> slow motion ｜ <b>Double tap</b> on mobile for slow motion ｜ Select tools on the left to start!</div>
 
 <script>
 // ======================== INIT ========================
@@ -264,13 +264,13 @@ function addSc(pts){
     $('xS').textContent=score;$('xC').textContent=combo+'x';
     clearTimeout(cTimer);
     cTimer=setTimeout(()=>{
-        if(combo>=10){if(!ach.c10){ach.c10=true;toast('🔥','连击大师!',`达成 ${combo} 连击`)}
+        if(combo>=10){if(!ach.c10){ach.c10=true;toast('🔥','Combo Master!',`Achieved ${combo} combo`)}
             spawnCombo(W/2,H/2,`🔥 ${combo}x COMBO!`,'#f87171')}
         combo=0;$('xC').textContent='0x'
     },2000);
-    if(!ach.first){ach.first=true;toast('🎉','首次发射!','欢迎来到星际乐章')}
-    if(balls.length>=10&&!ach.ten){ach.ten=true;toast('🔮','球球派对','10个球同时弹跳!')}
-    if(score>=1000&&!ach.k){ach.k=true;toast('🏆','千分大师','得分突破1000!')}
+    if(!ach.first){ach.first=true;toast('🎉','First Launch!','Welcome to Stellar Symphony')}
+    if(balls.length>=10&&!ach.ten){ach.ten=true;toast('🔮','Ball Party','10 balls bouncing at once!')}
+    if(score>=1000&&!ach.k){ach.k=true;toast('🏆','Score Master','Score exceeded 1000!')}
 }
 
 function $(id){return document.getElementById(id)}
@@ -333,7 +333,7 @@ function splitB(b){
     for(let i=0;i<n;i++){const a=(Math.PI*2/n)*i,s=2.5+Math.random()*3;
         const nb=mkBall(b.x+Math.cos(a)*b.r,b.y+Math.sin(a)*b.r,b.vx*.4+Math.cos(a)*s,b.vy*.4+Math.sin(a)*s,b.type,Math.max(5,nr+rnd(-1.5,1.5)));
         nb.hue=b.hue+rnd(-25,25);balls.push(nb)}
-    spawnP(b.x,b.y,14,b.hue,4.5);spawnCombo(b.x,b.y,'💥 裂变!',`hsl(${b.hue},80%,65%)`);b.alive=false;addSc(100)
+    spawnP(b.x,b.y,14,b.hue,4.5);spawnCombo(b.x,b.y,'💥 Fission!',`hsl(${b.hue},80%,65%)`);b.alive=false;addSc(100)
 }
 
 function wallCol(b,w){
@@ -355,7 +355,7 @@ function mineHit(b,m){
         balls.forEach(ob=>{if(!ob.alive)return;const dx=ob.x-m.x,dy=ob.y-m.y,d=Math.hypot(dx,dy);
             if(d<200&&d>1){const f=(200-d)*.15;ob.vx+=dx/d*f;ob.vy+=dy/d*f}});
         addSc(200);
-        if(!ach.mine){ach.mine=true;toast('💣','爆破专家','引爆了第一颗地雷!')}
+        if(!ach.mine){ach.mine=true;toast('💣','Demolition Expert','Detonated the first mine!')}
     }
 }
 
@@ -443,7 +443,7 @@ function update(dt){
                 if(dst(b,p)<p.r){
                     const partner=portals.find(pp=>pp.pair===p.pair&&pp.role!==p.role);
                     if(partner){b.x=partner.x;b.y=partner.y;b.pcd=.5;pPort();spawnP(partner.x,partner.y,10,p.role==='in'?280:200,3);addSc(15);
-                        if(!ach.port){ach.port=true;toast('🔮','空间旅行者','第一次传送!')}break}
+                        if(!ach.port){ach.port=true;toast('🔮','Space Traveler','First teleport!')}break}
                 }
             }
         }
@@ -609,12 +609,12 @@ function render(){
         G.beginPath();G.arc(portalStep.x,portalStep.y,24,0,Math.PI*2);
         G.strokeStyle='rgba(167,139,250,0.5)';G.lineWidth=2;G.setLineDash([5,5]);G.stroke();G.setLineDash([]);
         G.fillStyle='rgba(167,139,250,0.55)';G.font='bold 9px sans-serif';G.textAlign='center';
-        G.fillText('✓ 入口',portalStep.x,portalStep.y+38);
+        G.fillText('✓ Entrance',portalStep.x,portalStep.y+38);
         G.beginPath();G.moveTo(portalStep.x,portalStep.y);G.lineTo(dEnd.x,dEnd.y);
         G.strokeStyle='rgba(236,72,153,0.2)';G.lineWidth=1;G.setLineDash([3,6]);G.stroke();G.setLineDash([]);
         G.beginPath();G.arc(dEnd.x,dEnd.y,24,0,Math.PI*2);
         G.strokeStyle='rgba(236,72,153,0.3)';G.lineWidth=2;G.setLineDash([5,5]);G.stroke();G.setLineDash([]);
-        G.fillStyle='rgba(236,72,153,0.5)';G.fillText('← 出口',dEnd.x,dEnd.y+38)
+        G.fillStyle='rgba(236,72,153,0.5)';G.fillText('← Exit',dEnd.x,dEnd.y+38)
     }
 
     // Mines
@@ -857,16 +857,16 @@ document.querySelectorAll('.tbtn').forEach(btn=>{
         $('bp').classList.toggle('show',tool==='launch');
         updPUI();
         const hints={
-            launch:'🏹 <b>拖拽</b>蓄力发射弹力球 ｜ 拖得越远力量越大',
-            gravity:'🌀 <b>左键</b>放置吸引力场 ｜ <b>右键</b>放置排斥力场',
-            portal:'🔮 第一次点击放置<b>入口</b> ｜ 第二次点击放置<b>出口</b>',
-            wall:'✏️ <b>拖拽</b>绘制反弹墙壁 ｜ 可画多条',
-            mine:'💣 点击放置<b>炸弹</b> ｜ 1秒后激活',
-            spinner:'🔄 点击放置<b>旋转器</b> ｜ 自动旋转弹飞球体',
-            wind:'🌊 <b>拖拽定义方向</b>放置风场 ｜ 持续推动球体',
-            target:'🎯 点击放置<b>得分区</b> ｜ 球经过持续得分',
-            split:'💥 点击<b>球体</b>裂变 ｜ 点击空白产生<b>冲击波</b>',
-            erase:'🧹 <b>拖拽</b>擦除任何物体'
+            launch:'🏹 <b>Drag</b> to charge and launch ball ｜ The farther you drag, the more power',
+            gravity:'🌀 <b>Left click</b> to place attractor ｜ <b>Right click</b> to place repulsor',
+            portal:'🔮 First click to place <b>entrance</b> ｜ Second click to place <b>exit</b>',
+            wall:'✏️ <b>Drag</b> to draw bounce walls ｜ Multiple walls allowed',
+            mine:'💣 Click to place <b>mine</b> ｜ Arms after 1 second',
+            spinner:'🔄 Click to place <b>spinner</b> ｜ Auto-spins and flings balls',
+            wind:'🌊 <b>Drag to define direction</b> to place wind zone ｜ Continuously pushes balls',
+            target:'🎯 Click to place <b>score zone</b> ｜ Balls score while passing through',
+            split:'💥 Click <b>ball</b> to fission ｜ Click empty space for <b>shockwave</b>',
+            erase:'🧹 <b>Drag</b> to erase any object'
         };
         $('hint').innerHTML=hints[tool]||'';$('hint').style.opacity='1';
     })
